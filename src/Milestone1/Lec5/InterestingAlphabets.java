@@ -1,17 +1,19 @@
-package Milestone1.Lec4;
+package Milestone1.Lec5;
 
 import java.util.Scanner;
 
-public class TriangleNumberPattern {
+public class InterestingAlphabets {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int row = 1;
         int nst = 1;
-        while(row <= n){
+        while (row <= n) {
             int cst = 1;
-            while(cst <= nst){
-                System.out.print(row);
+            int num = n - row;
+            while (cst <= nst) {
+                System.out.print((char)('A' + num));
+                num++;
                 cst++;
             }
             System.out.println();
@@ -20,4 +22,3 @@ public class TriangleNumberPattern {
         }
     }
 }
-
