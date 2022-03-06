@@ -21,8 +21,9 @@ public class PairSum {
                     }
                 }
             }
-        System.out.println(count);
+            System.out.println(count);
             testcases--;
         }
     }
+
 }
