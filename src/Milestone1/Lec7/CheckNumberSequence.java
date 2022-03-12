@@ -5,22 +5,30 @@ import java.util.Scanner;
 public class CheckNumberSequence {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int size = sc.nextInt();
-        boolean isInc = false;
-        for(int i = 0; i < size-1; i++){
-            int curr = sc.nextInt();
-            int next = sc.nextInt();
-            if(curr < next){
-                if(isInc){
-                    
+        int n = sc.nextInt();
+        int prev = sc.nextInt();
+        int count = 2;
+        int curr;
+        boolean isDec = true;
+        while (count <= n) {
+            curr = sc.nextInt();
+            count++;
+            if (curr == prev) {
+                System.out.println(false);
+                return;
+            }
+            if (curr < prev) {
+                if (!isDec) {
+                    System.out.println(false);
+                    return;
+                }
+            } else {
+                if (isDec) {
+                    isDec = false;
                 }
             }
-            else if(curr > next){
-            }
-            else {
-                break;
-            }
+            prev = curr;
         }
+        System.out.println(true);
     }
 }
-
